@@ -23,7 +23,7 @@ var (
 	Loadbar1 = `[] [=] [==] [===] [====] [=====] [======] [=======] [========] [=========] [==========]`
 	Loadbar2 = `█▒▒▒▒▒▒▒▒▒ ███▒▒▒▒▒▒▒ █████▒▒▒▒▒ ███████▒▒▒ ██████████`
 	Loadbar3 = `[ ] [=> ] [===> ] [=====> ] [======> ] [========> ] [==========> ] [============> ] [==============> ] [================> ] [==================> ] [===================>]`
-	Default = Box1
+	Default = Loadbar1
 )
 
 // Spinner is exactly what you think it is.
@@ -35,9 +35,9 @@ type Spinner struct {
 }
 
 // New returns a spinner initialized with Default frames.
-func New(newframe string) *Spinner {
+func New() *Spinner {
 	s := &Spinner{}
-	s.Set(Loadbar1)
+	s.Set(Default)
 	return s
 }
 
