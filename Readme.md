@@ -8,7 +8,7 @@
 ## Installation
 
 ```
-$ go get github.com/tj/go-spin
+$ go get github.com/Local-Host-Net/spinner
 ```
 
 ## Example
