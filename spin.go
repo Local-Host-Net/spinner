@@ -1,4 +1,4 @@
-package spin
+package spunda
 
 import "sync"
 
