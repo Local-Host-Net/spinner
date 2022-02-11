@@ -27,7 +27,7 @@ var (
 )
 
 // Spinner is exactly what you think it is.
-type Spinner struct {
+type Spinner2 struct {
 	mu     sync.Mutex
 	frames []rune
 	length int
@@ -35,14 +35,14 @@ type Spinner struct {
 }
 
 // New returns a spinner initialized with Default frames.
-func New() *Spinner {
+func New() *Spinner2 {
 	s := &Spinner{}
 	s.Set(Default)
 	return s
 }
 
 // Set frames to the given string which must not use spaces.
-func (s *Spinner) Set(frames string) {
+func (s *Spinner2) Set(frames string) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.frames = []rune(frames)
@@ -50,7 +50,7 @@ func (s *Spinner) Set(frames string) {
 }
 
 // Current returns the current rune in the sequence.
-func (s *Spinner) Current() string {
+func (s *Spinner2) Current() string {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	r := s.frames[s.pos%s.length]
@@ -58,7 +58,7 @@ func (s *Spinner) Current() string {
 }
 
 // Next returns the next rune in the sequence.
-func (s *Spinner) Next() string {
+func (s *Spinner2) Next() string {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	r := s.frames[s.pos%s.length]
@@ -67,7 +67,7 @@ func (s *Spinner) Next() string {
 }
 
 // Reset the spinner to its initial frame.
-func (s *Spinner) Reset() {
+func (s *Spinner2) Reset() {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	s.pos = 0
