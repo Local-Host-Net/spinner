@@ -37,7 +37,7 @@ type Spinner struct {
 // New returns a spinner initialized with Default frames.
 func New() *Spinner {
 	s := &Spinner{}
-	s.Set(Default)
+	s.Set(Loadbar1)
 	return s
 }
 
